@@ -1,0 +1,5 @@
+name: TechKits
+version: '${version}'
+main: me.thelpro.techkits.TechKits
+commands:
+  kit
