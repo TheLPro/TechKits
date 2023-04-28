@@ -65,8 +65,10 @@ public class ShowKitShop {
 
         //gui.setItem(, new KitCreator(ChatColor.translateAlternateColorCodes('&', kits.get()), "", 0, , Material., 10).getKitItem());
 
-        gui.setItem(10, new KitCreator(ChatColor.translateAlternateColorCodes('&', kits.get(0)), "&7Simple but strong default kit.", 0, knight, Material.IRON_SWORD, 10).getKitItem());
-        gui.setItem(12, new KitCreator(ChatColor.translateAlternateColorCodes('&', kits.get(1)), "&7Newer upgrade of the knight kit. \nYou can finally start &4killing&7 some enemies!", 0,warrior, Material.IRON_CHESTPLATE, 5).getKitItem());
+        gui.setItem(10, new KitCreator(ChatColor.translateAlternateColorCodes('&', kits.get(0)), "&7Simple but strong default kit.", 0, MakeListUnbreakable.unbreakableAll(knight), Material.IRON_SWORD, 10).getKitItem());
+        gui.setItem(12, new KitCreator(ChatColor.translateAlternateColorCodes('&', kits.get(1)), "&7Newer upgrade of the knight kit. \nYou can finally start &4killing&7 some enemies!", 0, MakeListUnbreakable.unbreakableAll(warrior), Material.IRON_CHESTPLATE, 5).getKitItem());
+
+
 
     }
 
