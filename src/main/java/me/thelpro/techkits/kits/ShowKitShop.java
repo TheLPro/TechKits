@@ -9,6 +9,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryInteractEvent;
 import org.bukkit.inventory.Inventory;
@@ -17,10 +18,10 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ShowKitShop {
+public class ShowKitShop implements Listener {
 
-    TechKits plugin = TechKits.plugin;
-    FileConfiguration config = plugin.getConfig();
+    static TechKits plugin = TechKits.plugin;
+    static FileConfiguration config = plugin.getConfig();
 
     static ArrayList<String> kits = new ArrayList<String>();
     static HashMap<String, ArrayList<ItemStack>> masterKit = new HashMap<String, ArrayList<ItemStack>>();
@@ -59,7 +60,7 @@ public class ShowKitShop {
 
     }
 
-    public void showKitShop(Player player) {
+    public static void showKitShop(Player player) {
 
         Inventory gui = Bukkit.createInventory(player, 26, ChatColor.translateAlternateColorCodes('&', config.getString("shop-title")));
 
@@ -67,8 +68,6 @@ public class ShowKitShop {
 
         gui.setItem(10, new KitCreator(ChatColor.translateAlternateColorCodes('&', kits.get(0)), "&7Simple but strong default kit.", 0, MakeListUnbreakable.unbreakableAll(knight), Material.IRON_SWORD, 10).getKitItem());
         gui.setItem(12, new KitCreator(ChatColor.translateAlternateColorCodes('&', kits.get(1)), "&7Newer upgrade of the knight kit. \nYou can finally start &4killing&7 some enemies!", 0, MakeListUnbreakable.unbreakableAll(warrior), Material.IRON_CHESTPLATE, 5).getKitItem());
-
-
 
     }
 

@@ -2,4 +2,10 @@ name: TechKits
 version: '${version}'
 main: me.thelpro.techkits.TechKits
 commands:
-  kit
+  kit:
+    description: "Kit command"
+    permission: techkits.kit.use
+permissions:
+  techkits.kit.use:
+    description: Use /kit
+    default: not op
